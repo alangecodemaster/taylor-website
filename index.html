@@ -5,7 +5,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
 		<title>Famers Storage &#8211; Just another WordPress site</title>
-<link rel="canonical" href="https://farmerscornerstorage.com/" />
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">		<script>
 			function checkTheBox(e){
@@ -21,6 +20,117 @@
 			}
 		</script>
 
+		<style>
+			/*Theme Variables*/
+			:root{
+				/*site colors*/
+				--color-1: #53debf;
+				--color-2: #53debf;
+				
+				/*font sizes*/
+				--fsize-xl: 55px;
+				--fsize-lg: 40px;
+				--fsize-md: 30px;
+				--fsize-sm: 20px;
+				--fsize-default: 16px; /*ADA requires at least 16px*/
+				
+				/*font families*/
+				--heading-font: "Helvetica", serif;
+				--text-font: "Helvetica", sans-serif;
+			}
+			@media(max-width: 1000px){
+				:root{
+					/*font sizes*/
+					--fsize-xl: 40px;
+					--fsize-lg: 30px;
+					--fsize-md: 20px;
+					--fsize-sm: 18px;
+				}
+			}
+			@media(max-width: 750px){
+				:root{
+					/*font sizes*/
+					--fsize-xl: 35px;
+					--fsize-lg: 25px;
+					--fsize-md: 20px;
+					--fsize-sm: 18px;
+				}
+			}
+			
+			
+			/*Default Overall Styles*/
+			html, body{scroll-behavior: smooth; font-size: var(--fsize-default); font-variant-ligatures: none; overflow-anchor: none;}
+			body{margin:0; -webkit-font-smoothing: antialiased;}
+			*{box-sizing: border-box; -webkit-appearance: none;}
+			/* lazy loading flow fixes */
+			img{max-width: 100%; height: auto;}
+			img[src=""]{visibility: hidden;}
+			img[data-url]:before{content: '';display: block;padding-top: 56.25%;}
+			a{text-decoration: none; color: var(--color-1);}
+			.standard-button{display: inline-block; padding: 10px 25px; color: white; background: #222; text-transform: uppercase; letter-spacing: 1px; font-size: 14px; border-radius: 4px; transition: transform .25s;}
+			.standard-button:hover{transform: translateY(-5px);}
+			
+			
+			/*Font Defaults*/
+			h1, h2, h3, h4, h5, h6{font-family: var(--heading-font); line-height: 1.25em;}
+			body, p, ul, ol, li{font-family: var(--text-font); line-height: 1.5em;}
+			h1{font-size:var(--fsize-xl);}
+			h2{font-size:var(--fsize-lg);}
+			h3{font-size:var(--fsize-md);}
+			h4{font-size:var(--fsize-sm);}
+			
+			
+			/*Layout*/
+			.section-padding{padding: 5% 0;}
+			.content-width{width: 1130px; max-width: 100%; padding: 0 15px; margin: 0 auto;}
+			.flex{display: flex; flex-wrap: wrap;}
+			
+			
+			/* ADA header */
+			.masthead{padding: 15px 25px;}
+			.masthead .skip-bar{position: absolute; display: block; width: 100%; text-align: center; height: 0; overflow: hidden; background: #2b2b2b; top: 0; left: 0; z-index: 10;}
+			.masthead .skip-bar:focus{height: auto; padding: 20px;}
+			.masthead .inner-masthead{justify-content: space-between; align-items: center;}
+			.masthead .logo-container{width: 125px;}
+			.masthead .logo-container img{width: 125px; filter: invert(1);}
+			.masthead .menus{width: calc(100% - 125px); justify-content: flex-end;}
+			.mobile-nav-input{display: none;}
+			.masthead #menu-main{list-style: none; padding: 0; font-weight:800; text-transform: uppercase;}
+			.masthead #menu-main li a{color: white;}
+			.masthead #menu-main li.current_page_item a, .masthead #menu-main li:hover a{color: var(--color-1);}
+			#menu-main .sub-menu > li:focus-within > .sub-menu, #menu-main li{list-style-type: none;}
+			
+			@media (min-width: 1001px){
+				body.admin-bar .masthead {top: 32px;}
+				.mobile-nav{display: none;}
+				.masthead {position: absolute; left: 0; width: 100%; z-index: 1000; top: 0;}
+				.masthead #menu-main{display: flex; margin: 0; flex-wrap: wrap; justify-content: flex-end;}
+				.masthead #menu-main > li{padding: 30px 10px; position: relative; margin-bottom: 0!important;}
+				.masthead #menu-main > li > .sub-menu{position: absolute; top: 100%; left: 0; background: rgba(255, 255, 255,.95); backdrop-filter: blur(5px); height: 0; overflow: hidden; z-index: 1000; list-style: none; box-shadow: 0 2px 7px rgba(0,0,0,.4);}
+			.masthead #menu-main > li:hover > .sub-menu, .masthead #menu-main > li > a:focus + .sub-menu, .masthead #menu-main > li:focus-within > .sub-menu{height: auto; padding: 15px 0 15px 15px; min-width: 225px; overflow: initial;}
+			.masthead #menu-main > li > .sub-menu > li{position: relative; padding-right: 15px;}
+			.masthead #menu-main > li > .sub-menu .sub-menu{position: absolute; left: 99%; top: 0; background: rgba(37,37,37,.95); backdrop-filter: blur(5px); height: 0; width: 0; overflow: hidden; padding: 15px;}
+			.masthead #menu-main .sub-menu > li > .sub-menu{position: absolute; left: 99%; top: 0; background: rgba(37,37,37,.95); backdrop-filter: blur(5px); height: 0; width: 0; overflow: hidden; padding: 0;}
+			.masthead #menu-main .sub-menu > li:hover > .sub-menu, .masthead #menu-main .sub-menu > li > a:focus + .sub-menu, .masthead #menu-main .sub-menu > li:focus-within > .sub-menu{padding: 15px; width: initial; height: initial; min-width: 225px; list-style: none; border: 1px solid gray;}
+				#menu-item-83{border: 1px solid white; border-radius: 4px; padding: 10px 25px!important; align-self: center;}
+				#menu-item-83:hover{border:1px solid var(--color-2); background: var(--color-2); color: white!important;}
+				#menu-item-83:hover a{color: white!important;}
+			}
+			@media(max-width: 1000px){
+				.masthead {position: absolute; left: 0; width: 100%; z-index: 1000;}
+				.masthead .logo-container{width: 80%;}
+				.masthead .menus{width: 20%;}
+				.mobile-nav{font-size: 22px; transform: scaleX(1.75); outline-color: var(--color-1); color:white;}
+				.main-nav{position: absolute; top: 100%; width: 100%; left: 0; background: #222; box-shadow: 0 5px 10px rgba(0,0,0,.3); padding: 0 25px; height: 0; overflow: hidden; transition: padding .25s;}
+				#mobile-nav-input:checked + * + .main-nav{height: auto; padding: 10px 25px;}
+				#menu-main .sub-menu{display: none;}
+				#menu-main li a{outline-color: var(--color-1);}
+				#menu-main > li:hover > .sub-menu,
+				#menu-main > li:focus-within > .sub-menu,
+				#menu-main > li:hover > .sub-menu > li:hover > .sub-menu,
+				#menu-main > li:focus-within > .sub-menu > li:focus-within > .sub-menu{display: block;}
+			}
+		</style>
 
 	</head>
 
