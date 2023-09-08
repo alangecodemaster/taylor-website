@@ -59,7 +59,7 @@
 	
 	<div class="entry-content">
 		<style>
-	.home-banner{background-image: url('https://farmerscornerstorage.com/wp-content/uploads/2022/09/self-storage-shed.jpeg'); min-height: 600px; background-size: cover; background-position:center center; display: flex; justify-content: center; align-items: center; color: white; text-transform: uppercase; text-align: center;}
+	.home-banner{background-image: url('self-storage-shed.jpeg'); min-height: 600px; background-size: cover; background-position:center center; display: flex; justify-content: center; align-items: center; color: white; text-transform: uppercase; text-align: center;}
 	.home-banner .accent-text{font-size:16px; margin: 15px 0; font-weight: bold; letter-spacing: 1px;}
 	.home-banner h1{margin: 0;}
 	.home-banner h1 span{display:block;}
@@ -175,7 +175,7 @@
 
 
 
-<section class="home-awards section-padding lazyload" data-bg-img="https://farmerscornerstorage.com/wp-content/uploads/2022/09/storage-shed-white1.jpeg">
+<section class="home-awards section-padding lazyload" style="background-image: url('storage-shed-white1.jpeg');">
 	<div class="content-width">
 		<h2>Why <accent>Trust</accent> Us</h2>
 		<p class="sub-heading">Over the Competition</p>
@@ -272,7 +272,7 @@
 
 <section class="home-news">
 	<div class="container">
-		<div class="image-container lazyload" data-bg-img="https://farmerscornerstorage.com/wp-content/uploads/2022/09/rv-bw.jpeg">
+		<div class="image-container lazyload" style="background-image: url('rv-bw.jpeg');">
 			<svg xmlns="http://www.w3.org/2000/svg" version="1.2" viewBox="0 0 226 1481" width="226" height="1481"><path class="a" d="m226 0v1481h-226c226-305 226-1224.5 3-1481"/></svg>
 		</div>
 		
@@ -295,7 +295,22 @@
 			<h2 style="margin-top: 0;">Request a Unit</h2>
 			<p class="contact">Or Just Message Us</p>
 			<p style="text-align: center;"><em>Fill out the form below to ask us any questions. All inquiries through this form are directed to our email and you will receive a response within one or two business days.</em></p>
-			<iframe data-url="/ajax-form/"width="10000" height="395" style="max-width: 100%; border: none;"></iframe>
+			<div class="form">
+				<input type="text" placeholder="NAME*">
+				<input type="email" placeholder="EMAIL*">
+				<input type="phone" placeholder="PHONE*">
+				<select>
+					<option>Desired Storage Unit Size</option>
+					<option>5x14</option>
+					<option>8x14</option>
+					<option>10x14</option>
+					<option>12x14</option>
+					<option>12x33</option>
+					<option>RV Space</option>
+				</select>
+				<textarea placeholder="MESSAGE*"></textarea>
+				<button>CONTACT US</button>
+			</div>
 		</div>
 		
 		<div class="contact-info">
@@ -367,6 +382,10 @@
 			.home-awards h3{display: inline-block;}
 			.home-awards h3:after{content: ''; display: block; height: 3px; width: 100%; background: #ddd; transition: background .25s;}
 			.home-awards .indiv-trust:hover h3:after{background: var(--color-1);}
+			.form {display: grid; grid-gap: 15px;}
+			.form input, .form select, .form textarea{width: 100%; border: 1px solid white; padding: 10px 5px; border-radius: 4px; resize: none; background: none; color: white; font-family: sans-serif;}
+			.form button{display: inline-block; padding: 10px 25px; color: white; text-transform: uppercase; letter-spacing: 1px; font-size: 14px; border: 1px solid white; border-radius: 4px; transition: transform .25s; background: transparent; cursor: pointer; width: 160px;}
+			.form textarea{height: 150px;}
 			@media(max-width: 1000px){
 				.home-awards .indiv-trust h3:after{background: var(--color-1);}
 				.home-awards .indiv-trust{padding: 2em;}
